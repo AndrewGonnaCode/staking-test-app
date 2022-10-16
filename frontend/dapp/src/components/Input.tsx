@@ -1,20 +1,20 @@
-import React, { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction } from "react";
 
 interface IInputProps {
-    value:string,
-    onChange:any,
-    placeholder:string
+  value: string;
+  onChange: any;
+  placeholder: string;
 }
 
-const Input = ({value, onChange, placeholder}:IInputProps) => {
+const Input = ({ value, onChange, placeholder }: IInputProps) => {
   return (
     <div className="flex justify-center">
-  <div className="xl:w-96">
-    <input
-      value={value}
-      onChange={(e)=>onChange(e.target.value)}
-      type="text"
-      className="
+      <div className="xl:w-96">
+        <input
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          type="text"
+          className="
         form-control
         block
         w-full
@@ -31,11 +31,11 @@ const Input = ({value, onChange, placeholder}:IInputProps) => {
         ml-4
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
       "
-      placeholder={placeholder}
-    />
-  </div>
-</div>
-  )
-}
+          placeholder={placeholder}
+        />
+      </div>
+    </div>
+  );
+};
 
-export default Input
+export default Input;

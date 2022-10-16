@@ -1,26 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { Config, DAppProvider, Goerli } from '@usedapp/core';
-import { RPC_URL } from './constants';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { Config, DAppProvider, Goerli } from "@usedapp/core";
+import { RPC_URL } from "./constants";
 
 const config: Config = {
   readOnlyChainId: Goerli.chainId,
   readOnlyUrls: {
-    [Goerli.chainId]:RPC_URL,
+    [Goerli.chainId]: RPC_URL,
   },
-}
+};
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-      <DAppProvider config={config}>
-          <App />
-      </DAppProvider>
+    <DAppProvider config={config}>
+      <App />
+    </DAppProvider>
   </React.StrictMode>
 );
 
