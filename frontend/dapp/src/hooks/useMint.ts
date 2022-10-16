@@ -23,7 +23,10 @@ export const useMint = () =>{
            await handlePromise(txReceipt, "Mint!");
             
         } catch (error:any) {
-            const errorMessage = error.message || error.error.message;
+            const errorMessage =
+            error?.error?.message ||
+            error?.message ||
+            "Check console logs for error"
             triggerError(errorMessage);
         }
     },[token_contract])

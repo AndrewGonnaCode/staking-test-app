@@ -1,3 +1,4 @@
+import { STAKING_ADDRESS } from './../constants/index';
 import { Staking } from './../../../../contract/typechain-types/contracts/Staking';
 import { Token } from './../../../../contract/typechain-types/contracts/Token';
 import { useEthers } from "@usedapp/core"
@@ -14,7 +15,7 @@ export const useContracts = () =>{
     },[library])
 
     const staking_contract = useMemo(()=>{
-        if(library) return Staking__factory.connect(TOKEN_ADDRESS, library?.getSigner());
+        if(library) return Staking__factory.connect(STAKING_ADDRESS, library?.getSigner());
     },[library])
 
 

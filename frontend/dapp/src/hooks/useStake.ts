@@ -30,7 +30,7 @@ export const useStake = () =>{
 
                 const approveReceipt = approvePromise.wait();
      
-                await handlePromise(approveReceipt, "Tokens Withdraw!");
+                await handlePromise(approveReceipt, "Tokens Approve!");
             }
 
             const stakePromise = await staking_contract.stake(formattedAmount);
@@ -42,7 +42,10 @@ export const useStake = () =>{
 
             
         } catch (error:any) {
-            const errorMessage = error.message || error.error.message;
+            const errorMessage =
+            error?.error?.message ||
+            error?.message ||
+            "Check console logs for error"
             triggerError(errorMessage);
         }
     },[staking_contract])

@@ -3,7 +3,7 @@ import { ButtonType } from '../models'
 
 interface IButtonProps {
     children:ReactNode,
-    type:ButtonType,
+    type?:ButtonType,
     onClick:()=>Promise<void>
 }
 

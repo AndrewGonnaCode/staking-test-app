@@ -20,7 +20,10 @@ export const useWithdrawTokens = () =>{
            await handlePromise(txReceipt, "Tokens Withdraw!");
             
         } catch (error:any) {
-            const errorMessage = error.message || error.error.message;
+            const errorMessage =
+            error?.error?.message ||
+            error?.message ||
+            "Check console logs for error"
             triggerError(errorMessage);
         }
     },[staking_contract])
