@@ -25,7 +25,7 @@ export const useStake = () =>{
 
             const allowance = await token_contract.allowance(account, STAKING_ADDRESS);
 
-            if(Number(formattedAmount) < Number(allowance)){
+            if(Number(formattedAmount) > Number(allowance)){
                 const approvePromise = await token_contract.approve(STAKING_ADDRESS, formattedAmount);
 
                 const approveReceipt = approvePromise.wait();

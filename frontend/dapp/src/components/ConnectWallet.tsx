@@ -10,7 +10,7 @@ const ConnectWallet = () => {
      items-center justify-center rounded-md border border-transparent 
      bg-white px-5 py-3 text-base font-medium 
      text-indigo-600 hover:bg-indigo-50`}>
-        {account ? `${account.slice(0,3)}...${account.slice(account.length -1, account.length)}`:'Connect Wallet'}
+        {account ? `${account.slice(0,3)}...${account.slice(account.length -3, account.length)}`:'Connect Wallet'}
     </button>
   )
 }
