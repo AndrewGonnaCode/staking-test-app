@@ -3,13 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Config, DAppProvider, Goerli } from '@usedapp/core';
+import { RPC_URL } from './constants';
+
+const config: Config = {
+  readOnlyChainId: Goerli.chainId,
+  readOnlyUrls: {
+    [Goerli.chainId]:RPC_URL,
+  },
+}
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+      <DAppProvider config={config}>
+          <App />
+      </DAppProvider>
   </React.StrictMode>
 );
 
